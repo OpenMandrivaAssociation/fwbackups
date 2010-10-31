@@ -1,8 +1,8 @@
 
 %define name	fwbackups
 %define version	1.43.3
-%define pre	rc5
-%define rel	2
+%define pre	rc6
+%define rel	1
 
 Summary:	Feature-rich user backup program
 Name:		%{name}
