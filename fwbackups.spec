@@ -22,7 +22,7 @@ BuildArch:	noarch
 BuildRequires:	imagemagick
 BuildRequires:	intltool
 BuildRequires:	xsltproc
-%py_requires
+BuildRequires:	python-devel
 Requires:	pygtk2.0
 Requires:	pygtk2.0-libglade
 Requires:	python-pycrypto
