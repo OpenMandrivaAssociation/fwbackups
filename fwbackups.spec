@@ -1,21 +1,16 @@
-
 %define name	fwbackups
-%define version	1.43.3
-%define pre	rc6
+%define version	1.43.4
+#define pre	rc6
 %define rel	1
 
 Summary:	Feature-rich user backup program
 Name:		%{name}
 Version:	%{version}
-%if %pre
-Release:	%mkrel 0.%pre.%rel
-%else
-Release:	%mkrel %rel
-%endif
+Release:	%mkrel %{?pre:0.%{pre}.}%{rel}
 Group:		Archiving/Backup
 License:	GPLv2+
 URL:		http://www.diffingo.com/oss/fwbackups/
-Source:		http://www.diffingo.com/downloads/fwbackups/%{name}-%{version}%{pre}.tar.bz2
+Source:		http://www.diffingo.com/downloads/fwbackups/%{name}-%{version}%{?pre:%{pre}}.tar.bz2
 Patch0:		fwbackups-desktop-categories.patch
 BuildRoot:	%{_tmppath}/%{name}-root
 BuildArch:	noarch
@@ -40,7 +35,7 @@ backups with ease, supporting scheduled backups and backing up to
 remote computers.
 
 %prep
-%setup -q -n %{name}-%{version}%{pre}
+%setup -q -n %{name}-%{version}%{?pre:%{pre}}
 %apply_patches
 
 %build
