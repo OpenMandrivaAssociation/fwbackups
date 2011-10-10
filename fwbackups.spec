@@ -1,7 +1,7 @@
 %define name	fwbackups
 %define version	1.43.4
 #define pre	rc6
-%define rel	1
+%define rel	2
 
 Summary:	Feature-rich user backup program
 Name:		%{name}
@@ -11,7 +11,10 @@ Group:		Archiving/Backup
 License:	GPLv2+
 URL:		http://www.diffingo.com/oss/fwbackups/
 Source:		http://www.diffingo.com/downloads/fwbackups/%{name}-%{version}%{?pre:%{pre}}.tar.bz2
-Patch0:		fwbackups-desktop-categories.patch
+Source1:	fwbackups-po.tar.gz
+Patch0:		fwbackups-desktop.patch
+Patch1:		fwbackups-glade.patch
+Patch2:		fwbackups-runapp.patch
 BuildRoot:	%{_tmppath}/%{name}-root
 BuildArch:	noarch
 BuildRequires:	imagemagick
@@ -35,7 +38,7 @@ backups with ease, supporting scheduled backups and backing up to
 remote computers.
 
 %prep
-%setup -q -n %{name}-%{version}%{?pre:%{pre}}
+%setup -q -n %{name}-%{version}%{?pre:%{pre}} -a1
 %apply_patches
 
 %build
@@ -53,6 +56,8 @@ for i in 16x16 32x32 48x48; do
 	convert %{buildroot}%{_iconsdir}/hicolor/scalable/apps/%{name}.svg -resize ${i} %{buildroot}%{_iconsdir}/hicolor/${i}/apps/%{name}.png
 done
 
+%find_lang %{name} 
+
 %clean
 rm -rf %{buildroot}
 
@@ -65,3 +70,4 @@ rm -rf %{buildroot}
 %{_datadir}/applications/fwbackups.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 %{python_sitelib}/%{name}
+%{_localedir}/*
