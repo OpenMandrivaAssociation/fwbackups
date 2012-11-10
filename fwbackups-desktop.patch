@@ -1,0 +1,29 @@
+--- fwbackups-1.43.4.old/src/fwbackups.desktop	2010-11-28 06:21:03.000000000 +0300
++++ fwbackups-1.43.4/src/fwbackups.desktop	2011-10-10 11:57:30.495812436 +0400
+@@ -1,11 +1,14 @@
+ [Desktop Entry]
+ Name=fwbackups
++Name[ru]=Создание резервных копий fwbackups
+ GenericName=Backup/Restore
++GenericName[ru]=Резервирование/Восстановление
+ Comment=Backup or restore your files
++Comment[ru]=Создание резервных копий и восстановление ваших файлов
+ Exec=fwbackups
+ Icon=fwbackups
+ Terminal=false
+ Type=Application
+-Categories=GTK;System;
++Categories=GTK;System;Archiving;Utility;
+ #MimeType=text/plain
+ Version=1.0
+--- fwbackups-1.43.4.old/src/fwbackups-autostart.desktop	2010-11-28 06:21:03.000000000 +0300
++++ fwbackups-1.43.4/src/fwbackups-autostart.desktop	2011-10-10 11:57:51.948554975 +0400
+@@ -3,6 +3,8 @@
+ Comment=Backup or restore your files
+ Name[en_US]=fwbackups
+ Comment[en_US]=Backup or restore your files
++Name[ru]=Созадание резервных копий fwbackups
++Comment[ru]=Создание резервных копий и восстановление ваших файлов
+ Exec=/usr/bin/fwbackups --start-minimized
+ Type=Application
+ Version=1.0

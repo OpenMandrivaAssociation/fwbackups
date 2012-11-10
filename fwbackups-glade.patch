@@ -1,0 +1,83 @@
+--- fwbackups-1.43.4.old/src/fwbackups.glade	2010-12-06 08:40:03.000000000 +0300
++++ fwbackups-1.43.4/src/fwbackups.glade	2011-10-10 11:48:52.000000000 +0400
+@@ -580,7 +580,7 @@
+ 					  <child>
+ 					    <widget class="GtkLabel" id="label19">
+ 					      <property name="visible">True</property>
+-					      <property name="label">_New Set</property>
++					      <property name="label" translatable="yes">_New Set</property>
+ 					      <property name="use_underline">True</property>
+ 					      <property name="use_markup">False</property>
+ 					      <property name="justify">GTK_JUSTIFY_LEFT</property>
+@@ -655,7 +655,7 @@
+ 					  <child>
+ 					    <widget class="GtkLabel" id="label20">
+ 					      <property name="visible">True</property>
+-					      <property name="label">Ed_it Set</property>
++					      <property name="label" translatable="yes">Ed_it Set</property>
+ 					      <property name="use_underline">True</property>
+ 					      <property name="use_markup">False</property>
+ 					      <property name="justify">GTK_JUSTIFY_LEFT</property>
+@@ -730,7 +730,7 @@
+ 					  <child>
+ 					    <widget class="GtkLabel" id="label21">
+ 					      <property name="visible">True</property>
+-					      <property name="label">_Delete Set</property>
++					      <property name="label" translatable="yes">_Delete Set</property>
+ 					      <property name="use_underline">True</property>
+ 					      <property name="use_markup">False</property>
+ 					      <property name="justify">GTK_JUSTIFY_LEFT</property>
+@@ -3502,7 +3502,7 @@
+ 	    <widget class="GtkRadioToolButton" id="OverviewRadioTool">
+ 	      <property name="border_width">2</property>
+ 	      <property name="visible">True</property>
+-	      <property name="label">Overview</property>
++	      <property name="label" translatable="yes">Overview</property>
+ 	      <property name="use_underline">True</property>
+ 	      <property name="stock_id">gtk-home</property>
+ 	      <property name="visible_horizontal">True</property>
+@@ -3521,7 +3521,7 @@
+ 	    <widget class="GtkRadioToolButton" id="BackupSetsRadioTool">
+ 	      <property name="border_width">2</property>
+ 	      <property name="visible">True</property>
+-	      <property name="label">Backup Sets</property>
++	      <property name="label" translatable="yes">Backup Sets</property>
+ 	      <property name="use_underline">True</property>
+ 	      <property name="stock_id">gtk-harddisk</property>
+ 	      <property name="visible_horizontal">True</property>
+@@ -3540,7 +3540,7 @@
+ 	  <child>
+ 	    <widget class="GtkRadioToolButton" id="OneTimeRadioTool">
+ 	      <property name="visible">True</property>
+-	      <property name="label">One-Time Backup</property>
++	      <property name="label" translatable="yes">One-Time Backup</property>
+ 	      <property name="use_underline">True</property>
+ 	      <property name="stock_id">gtk-execute</property>
+ 	      <property name="visible_horizontal">True</property>
+@@ -3560,7 +3560,7 @@
+ 	    <widget class="GtkRadioToolButton" id="LogViewRadioTool">
+ 	      <property name="border_width">2</property>
+ 	      <property name="visible">True</property>
+-	      <property name="label">Log Viewer</property>
++	      <property name="label" translatable="yes">Log Viewer</property>
+ 	      <property name="use_underline">True</property>
+ 	      <property name="stock_id">gtk-file</property>
+ 	      <property name="visible_horizontal">True</property>
+@@ -3592,7 +3592,7 @@
+ 	  <child>
+ 	    <widget class="GtkToolButton" id="RestoreToolButton">
+ 	      <property name="visible">True</property>
+-	      <property name="label">Restore</property>
++	      <property name="label" translatable="yes">Restore</property>
+ 	      <property name="use_underline">True</property>
+ 	      <property name="stock_id">gtk-undo</property>
+ 	      <property name="visible_horizontal">True</property>
+@@ -7935,7 +7935,7 @@
+ 				      <child>
+ 					<widget class="GtkLabel" id="label31">
+ 					  <property name="visible">True</property>
+-					  <property name="label">_Add Folder(s)</property>
++					  <property name="label" translatable="yes">_Add Folder(s)</property>
+ 					  <property name="use_underline">True</property>
+ 					  <property name="use_markup">False</property>
+ 					  <property name="justify">GTK_JUSTIFY_LEFT</property>
