@@ -71,3 +71,29 @@ rm -rf %{buildroot}
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 %{python_sitelib}/%{name}
 %{_localedir}/*
+
+%changelog
+* Mon Oct 10 2011 Александр Казанцев <kazancas@mandriva.org> 1.43.4-2mdv2012.0
++ Revision: 703996
+- made fwbackups translatable
+- add russian translate
+- fix desktop file for Russian
+- fix glade file for missing translatable part and runapp for nontranslated part
+
+* Tue Mar 08 2011 Jani Välimaa <wally@mandriva.org> 1.43.4-1
++ Revision: 642930
+- new version 1.43.4
+
+* Sun Oct 31 2010 Funda Wang <fwang@mandriva.org> 1.43.3-0.rc6.1mdv2011.0
++ Revision: 590923
+- new version 1.43.3 r6
+
+* Sun Oct 31 2010 Funda Wang <fwang@mandriva.org> 1.43.3-0.rc5.2mdv2011.0
++ Revision: 590878
+- BR python-devel
+- rebuild for py 2.7
+
+* Wed Sep 01 2010 Anssi Hannula <anssi@mandriva.org> 1.43.3-0.rc5.1mdv2011.0
++ Revision: 575154
+- initial Mandriva release
+
