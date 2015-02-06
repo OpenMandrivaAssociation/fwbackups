@@ -1,7 +1,7 @@
 Summary:	Feature-rich user backup program
 Name:		fwbackups
 Version:	1.43.4
-Release:	3
+Release:	4
 Group:		Archiving/Backup
 License:	GPLv2+
 URL:		http://www.diffingo.com/oss/fwbackups/
