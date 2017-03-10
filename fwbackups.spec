@@ -1,25 +1,22 @@
 Summary:	Feature-rich user backup program
 Name:		fwbackups
-Version:	1.43.4
-Release:	4
+Version:	1.43.6
+Release:	1
 Group:		Archiving/Backup
 License:	GPLv2+
 URL:		http://www.diffingo.com/oss/fwbackups/
 Source0:	http://www.diffingo.com/downloads/fwbackups/%{name}-%{version}%{?pre:%{pre}}.tar.bz2
 Source1:	fwbackups-po.tar.gz
-Patch0:		fwbackups-desktop.patch
-Patch1:		fwbackups-glade.patch
-Patch2:		fwbackups-runapp.patch
 BuildArch:	noarch
 BuildRequires:	imagemagick
 BuildRequires:	intltool
 BuildRequires:	xsltproc
-BuildRequires:	python-devel
+BuildRequires:	python2-devel
 Requires:	pygtk2.0
 Requires:	pygtk2.0-libglade
-Requires:	python-pycrypto
-Requires:	python-paramiko
-Requires:	python-notify
+Requires:	python2-pycrypto
+Requires:	python2-paramiko
+Requires:	python2-notify
 Requires:	tar
 Requires:	rsync
 
@@ -34,20 +31,14 @@ remote computers.
 %prep
 %setup -q -n %{name}-%{version}%{?pre:%{pre}} -a1
 %apply_patches
-
+sed -i 's/\bpython\b/python2/' bin/*
 %build
+export PYTHON=python2
 %configure
 %make
 
 %install
 %makeinstall_std
-
-# icon theme spec
-install -d -m755 %{buildroot}%{_iconsdir}/hicolor/{scalable,48x48,32x32,16x16}/apps
-mv %{buildroot}%{_datadir}/pixmaps/%{name}.svg %{buildroot}%{_iconsdir}/hicolor/scalable/apps/
-for i in 16x16 32x32 48x48; do
-	convert %{buildroot}%{_iconsdir}/hicolor/scalable/apps/%{name}.svg -resize ${i} %{buildroot}%{_iconsdir}/hicolor/${i}/apps/%{name}.png
-done
 
 %find_lang %{name} 
 
@@ -58,5 +49,5 @@ done
 %{_datadir}/%{name}
 %{_datadir}/applications/fwbackups.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}.*
-%{python_sitelib}/%{name}
+%{python2_sitelib}/%{name}
 %{_localedir}/*
