@@ -1,7 +1,7 @@
 Summary:	Feature-rich user backup program
 Name:		fwbackups
 Version:	1.43.6
-Release:	1
+Release:	2
 Group:		Archiving/Backup
 License:	GPLv2+
 URL:		http://www.diffingo.com/oss/fwbackups/
@@ -11,6 +11,7 @@ BuildArch:	noarch
 BuildRequires:	imagemagick
 BuildRequires:	intltool
 BuildRequires:	xsltproc
+BuildRequires:	desktop-file-utils
 BuildRequires:	python2-devel
 Requires:	pygtk2.0
 Requires:	pygtk2.0-libglade
@@ -39,6 +40,8 @@ export PYTHON=python2
 
 %install
 %makeinstall_std
+
+desktop-file-edit --add-category=Archiving --add-category=Utility %{buildroot}%{_datadir}/applications/fwbackups.desktop
 
 %find_lang %{name} 
 
