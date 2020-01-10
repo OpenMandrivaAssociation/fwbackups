@@ -31,7 +31,7 @@ remote computers.
 
 %prep
 %setup -q -n %{name}-%{version}%{?pre:%{pre}} -a1
-%apply_patches
+%autopatch -p1
 sed -i 's/\bpython\b/python2/' bin/*
 %build
 export PYTHON=python2
