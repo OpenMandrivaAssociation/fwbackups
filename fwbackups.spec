@@ -1,10 +1,12 @@
+#NOTE: this package is obsolete becaute it requires python2
+
 Summary:	Feature-rich user backup program
 Name:		fwbackups
-Version:	1.43.6
-Release:	2
+Version:	1.43.7
+Release:	1
 Group:		Archiving/Backup
 License:	GPLv2+
-URL:		http://www.diffingo.com/oss/fwbackups/
+URL:		https://www.diffingo.com/oss/fwbackups/
 Source0:	http://www.diffingo.com/downloads/fwbackups/%{name}-%{version}%{?pre:%{pre}}.tar.bz2
 Source1:	fwbackups-po.tar.gz
 BuildArch:	noarch
@@ -30,16 +32,16 @@ backups with ease, supporting scheduled backups and backing up to
 remote computers.
 
 %prep
-%setup -q -n %{name}-%{version}%{?pre:%{pre}} -a1
-%autopatch -p1
+%autosetup -p1 -n %{name}-%{version}%{?pre:%{pre}} -a1
 sed -i 's/\bpython\b/python2/' bin/*
+
 %build
 export PYTHON=python2
 %configure
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 desktop-file-edit --add-category=Archiving --add-category=Utility %{buildroot}%{_datadir}/applications/fwbackups.desktop
 
